@@ -1,0 +1,262 @@
+@import 'vars';
+@import 'mixins';
+
+* {
+	box-sizing: border-box;
+	font-family: $font-family;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 1em;
+}
+
+body {
+	padding: 10px;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.875em;
+}
+
+
+.no-flexbox {
+	.user {
+		&-summary {
+			display: table;
+		}
+
+		&-photo, &-main-info {
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		&-main-info {
+			width: 90%;
+		}
+
+		&-photo {
+			img {
+				@include _transform-scale(1.1);
+			}
+		}
+
+		&-skill {
+			&-item {
+				display: inline-block;
+			}
+		}
+		&-responsibilities {
+			word-spacing: 0;
+			letter-spacing : -.36em;
+			//display: table;
+		}
+
+		&-responsibilities-item {
+			letter-spacing: normal;
+			display: inline-table;
+			vertical-align: top;
+			width: 25%;
+			border-bottom: 1px solid $user-main-info-color;
+			.header {
+				font-size: 1em;
+			}
+
+			&.aparted {
+				border-bottom: 2px solid $user-main-info-color;
+				border-collapse: collapse;
+				.part {
+					display: table-row;
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+.user {
+	&-summary {
+		@include _flexible(flex);
+		@include _align-items();
+		@include _justify-content(space-between);
+		@include _flex-wrap(wrap);
+	}
+
+	&-photo {
+		@include _flexible(flex);
+		@include _flex-grow(0);
+		@include _flex-shrink(0);
+		@include _align-items(center);
+		@include _justify-content(center);
+		@include _flex-basis($item-measure);
+		overflow: hidden;
+		min-width: 0;
+
+		img {
+			@include _flexible(flex);
+			@include _flex-basis($item-measure);
+		}
+	}
+
+	&-main-info {
+		@include _flex-grow(2);
+		@include _flex-shrink(3);
+		background-color: $user-main-info-color;
+		padding: 27px 31px 15px 36px;
+	}
+
+	&-main-info-name {
+		font-weight: normal;
+		margin-bottom: 9px;
+	}
+
+	&-additional-location, &-additional-languages {
+		color: $user-additional-color;
+		font-weight: bold;
+		margin-bottom: 9px;
+	}
+
+	&-additional-languages {
+		margin-bottom: 21px;
+	}
+
+	&-skill {
+		&-list {
+			@include _flexible(flex);
+			@include _flex-wrap(wrap);
+			@include _justify-content();
+			margin-bottom: 9px;
+		}
+
+		&-item {
+		   @include _flexible(inline-flex);
+		   @include _border-radius(3px);
+		   background-color: #000;
+		   color: #fff;
+		   font-size: 0.9em;
+		   margin-right: 0.5em;
+		   padding: 6px 10px 5px;
+		   text-transform: uppercase;
+		}
+
+	}
+
+	&-add-skills {
+		color: $user-additional-color;
+		font-size: 0.9em;
+		text-decoration: none;
+	}
+
+	&-responsibilities {
+		@include _flexible(flex);
+		@include _flex-wrap(wrap);
+		@include _align-items(stretch);
+		border-left: 1px solid $user-main-info-color;
+		border-top: 1px solid $user-main-info-color;
+	}
+
+	&-responsibilities-item {
+		@include _flex-basis($item-measure);
+		@include _flex-grow(4);
+		@include _align-items(stretch);
+		@include _flex-wrap(wrap);
+		color: $user-additional-color;
+		min-height: $item-measure;
+		overflow: hidden;
+		box-sizing: border-box;
+		border-right: 1px solid $user-main-info-color;
+		border-bottom: 1px solid $user-main-info-color;
+
+		.header {
+			background-color: #fff;
+			text-align: center;
+			padding: 22px 12px 15px 12px;
+			min-height: 70px;
+		}
+
+		.caption {
+			text-align: center;
+			font-size: 0.9em;
+		}
+
+		.availability {
+			text-align: center;
+			font-size: 1.8em;
+			font-weight: bold;
+		}
+
+		&.sample-code {
+			background-repeat: no-repeat;
+			background-position: 0% 100%;
+			background-size: cover;
+			.header {
+				background-color: rgba(255,255,255,0.7);
+			}
+		}
+
+		&.aparted {
+			.part {
+				height: 50%;
+			}
+			.header {
+				min-height: 50px;
+			}
+			.caption {
+				padding: 0 20px;
+			}
+			.part:first-child {
+				border-bottom: 1px solid $user-main-info-color;
+			}
+		}
+
+		&.quotation {
+			.quote {
+				&:before, &:after {
+					color: $big-quotes-color;
+					font-size: 10em;
+					font-style: normal;
+					font-family: $font-family;
+					line-height: 0;
+					position: absolute;
+					z-index: -1;
+				}
+				&:before {
+					content: '\201C';
+					left: 6px;
+					top: 35px;
+				}
+				&:after {
+					content: '\201D';
+					bottom: -50%;
+					right: 10px;
+				}
+				font-family: $font-family-quotes;
+				font-size: 0.9em;
+				font-style: italic;
+				min-height: 120px;
+				padding: 0 20px;
+				position: relative;
+				z-index: 1;
+			}
+		}
+	}
+}
+
+.portfolio {
+	&-list {
+		padding-left: 26px;
+		padding-right: 26px;
+	}
+	&-list-item {
+		display: list-item;
+		font-size: 0.9em;
+		list-style-type: disc;
+		margin-bottom: 5px;
+		&-title {
+			font-weight: bold;
+		}
+	}
+}

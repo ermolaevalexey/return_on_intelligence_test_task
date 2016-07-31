@@ -1,0 +1,67 @@
+@mixin _flexible($display: flex) {
+	display: -webkit-#{$display}';
+	display: -ms-#{$display}box'; // IE10 uses -ms-flexbox
+	display: -ms-#{$display}; //IE11
+}
+
+@mixin _justify-content($justify: flex-start) {
+	-webkit-justify-content: $justify;
+  	-ms-justify-content: $justify;
+  	justify-content: $justify;
+}
+
+@mixin _align-items($align: stretch) {
+	-ms-align-items: $align;
+	align-items: $align;
+}
+
+@mixin _align-content($align: flex-start) {
+	-webkit-align-content: $align;
+	-moz-align-content: $align;
+	-ms-align-content: $align;
+	-o-align-content: $align;
+	align-content: $align;
+}
+
+@mixin _flex-grow($grow: 0) {
+	-webkit-flex-grow: $grow;
+  	-ms-flex-grow: $grow;
+  	flex-grow: $grow;
+}
+
+@mixin _flex-shrink($shrink: 1) {
+  -webkit-flex-shrink: $shrink;
+  -ms-flex-shrink: $shrink;
+  flex-shrink: $shrink;
+}
+
+@mixin _flex-wrap($wrap: nowrap) {
+	-webkit-flex-wrap: $wrap;
+	-ms-flex-wrap: $wrap;
+	flex-wrap: $wrap;
+}
+
+@mixin _border-radius($radius: 0px) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	-o-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin _transform-scale($value) {
+	-webkit-transform: scale($value);
+	-ms-transform: scale($value);
+	-o-transform: scale($value);
+	transform: scale($value);
+}
+
+@mixin _flex-basis($value: auto) {
+	-webkit-flex-basis: $value;
+	-moz-flex-basis: $value;
+	-ms-flex-basis: $value;
+	-o-flex-basis: $value;
+	flex-basis: $value;
+}
+
+

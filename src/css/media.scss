@@ -1,0 +1,70 @@
+@import 'vars';
+@import 'mixins';
+
+@media screen and (min-width: 740px) and (max-width: 978px) {
+	.user {
+		&-responsibilities-item {
+			@include _flex-grow(3);
+		}
+	}
+}
+
+@media screen and (min-width: 521px) and (max-width: 747px) {
+	.user {
+		&-photo {
+			img {
+				@include _transform-scale(2);
+			}
+		}
+
+		&-main-info {
+			@include _flex-shrink(50);
+		}
+	}
+}
+
+@media screen and (max-width: 739px) {
+	.user {
+		&-responsibilities-item {
+			@include _flex-grow(2);
+		}
+	}
+}
+
+@media screen and (max-width: 699px)  {
+	.user {
+		&-skill {
+			&-item {
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 520px) {
+	.user {
+		&-summary {
+			@include _flex-wrap(nowrap);
+		}
+	}
+
+}
+
+@media screen and (max-width: 520px) {
+	.user {
+		&-photo {
+			@include _flex-grow(2);
+			img {
+				@include _transform-scale(2.1);
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 499px) {
+	.user {
+		&-responsibilities-item {
+			@include _flex-grow(2);
+		}
+	}
+}
