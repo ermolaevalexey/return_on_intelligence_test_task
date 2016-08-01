@@ -5,7 +5,12 @@ $(document).ready(function () {
 		element.css('background-image', 'url('+ bgi +')');
 	};
 
-	console.log($('.user-responsibilities-item.sample-code').data());
+	//console.log($('.user-responsibilities-item.sample-code').data());
 	
 	setBg($('.user-responsibilities-item.sample-code'));
+
+	$('#user-name, #user-location').bind('focus focusout', function() {
+		$(this).toggleClass('editing');
+	});
+
 });

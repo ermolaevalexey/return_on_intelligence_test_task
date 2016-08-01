@@ -1,3 +1,14 @@
+@mixin _box-sizing($sizing: border-box) {
+	-webkit-box-sizing: $sizing;
+	-moz-box-sizing: $sizing;
+	box-sizing: $sizing;
+}
+
+@mixin _box-shadow($x, $y, $blur, $spread, $color) {
+	-webkit-box-shadow: $x $y $blur $spread $color;
+	box-shadow: $x $y $blur $spread $color;
+}
+
 @mixin _flexible($display: flex) {
 	display: -webkit-#{$display}';
 	display: -ms-#{$display}box'; // IE10 uses -ms-flexbox

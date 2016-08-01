@@ -35,6 +35,9 @@
 
 @media screen and (max-width: 739px) {
 	.user {
+		&-main-info-name, &-additional-location, &-additional-languages {
+			max-width: 80%;
+		}
 		&-responsibilities-item {
 			@include _flex-grow(2);
 		}

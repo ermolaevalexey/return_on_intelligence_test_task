@@ -1,11 +1,18 @@
+//Fonts
 $font-family: Arial, Helvetica, sans-serif;
 $font-family-quotes: Georgia, serif;
-$items: 4;
-$big-quotes-color: #ededed;
-$layout-width: 960px;
 $base-font-size: 0.9em;
+
+//Colors
+$big-quotes-color: #ededed;
 $skill-item-background: #000;
 $skill-item-text: #fff;
+$editing-bg: $skill-item-text;
 $user-main-info-color: #e6e6e6;
 $user-additional-color: #4c4c4c;
+$hover-border-color: #bababa;
+
+//Calculations
+$layout-width: 960px;
+$items: 4;
 $item-measure: ($layout-width - 1)/$items;
