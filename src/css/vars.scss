@@ -1,7 +1,7 @@
 //Fonts
 $font-family: Arial, Helvetica, sans-serif;
 $font-family-quotes: Georgia, serif;
-$base-font-size: 0.9em;
+$base-font-size: .9em;
 
 //Colors
 $big-quotes-color: #ededed;
@@ -10,6 +10,8 @@ $skill-item-medium-background: #5c5c5c;
 $skill-item-weak-background: #a2a2a2;
 $skill-item-text: #fff;
 $skill-field-focus: #00ff00;
+$delete-skill-link-bg: #fa7672;
+$delete-skill-link-border: #f92815;
 $editing-bg: $skill-item-text;
 $user-main-info-color: #e6e6e6;
 $user-additional-color: #4c4c4c;
@@ -23,3 +25,8 @@ $editable-field-width: 460px;
 $editable-select-width: 258px;
 $items: 4;
 $item-measure: ($layout-width - 1)/$items;
+
+
+//Images
+$accept:  url("../images/mark-accept.svg");
+$decline:  url("../images/mark-decline.svg");

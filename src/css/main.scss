@@ -126,12 +126,12 @@ h2 {
 		}
 
 		&-accept {
-			background-image: url("../images/mark-accept.svg");
+			background-image: $accept;
 			background-size: 120%;
 		}
 
 		&-decline {
-			background-image: url("../images/mark-decline.svg");
+			background-image: $decline;
 			background-size: 50%;
 		}
 	}
@@ -238,6 +238,7 @@ h2 {
 		   margin-right: 0.5em;
 		   padding: 6px 10px 5px;
 		   text-transform: uppercase;
+		   position: relative;
 		   &.strong {
 		   		background-color: $skill-item-strong-background;
 		   }
@@ -247,6 +248,30 @@ h2 {
 		   &.weak {
 		   		background-color: $skill-item-weak-background;
 		   }
+
+		   .delete-skill {
+		   		width: .9em;
+		   		height: .9em;
+		   		@include _border-radius(50%);
+		   		position: absolute;
+		   		top: 0;
+		   		bottom: 0;
+		   		right: 5px;
+		   		margin: auto;
+		   		background-color: $delete-skill-link-bg;
+		   		border: 1px solid $delete-skill-link-border;
+		   		background-image: $decline;
+		   		background-repeat: no-repeat;
+		   		background-position: 50% 50%;
+		   		background-size: 70%;
+		   		display: none;
+		    }
+
+		    &:hover {
+		    	.delete-skill {
+		    		display: inline-block;
+		    	}
+		    }
 		}
 
 	}

@@ -39,10 +39,10 @@ $(document).ready(function () {
 
 	});
 
-	$('#user-add-skills').bind('focus', function() {
+	$('#user-add-skills').bind('focus', function () {
 		var textContent = $(this).html(),
 			$input = $(this),
-			$skillLevel = '';
+			$skillLevel = $input.parent().find('#skill-level').val();
 
 		$input.parent().addClass('editing');
 
@@ -56,13 +56,20 @@ $(document).ready(function () {
 				$input.parent().removeClass('editing');
 				return;
 			} else {
-				var li = '<li class="user-skill-item ' + $skillLevel + '">'+ $input.html() + '</li>'
+				var li = '<li class="user-skill-item ' + $skillLevel + '">'+ $input.html() 
+						 	+ '<a href="#" class="delete-skill"></a>' + 
+						 '</li>';
 				$('.user-skill-list').append(li);
 				$input.html(textContent);
 				$input.parent().removeClass('editing');
 			}
 		});
 
+	});
+
+	$('.user-skill-item').find('.delete-skill').click(function (e) {
+		e.preventDefault();
+		$(this).parent().remove();
 	});
 
 
