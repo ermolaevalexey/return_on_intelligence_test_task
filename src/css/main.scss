@@ -10,6 +10,7 @@
 	padding: 0;
 	list-style: none;
 	font-size: 1em;
+	font-weight: normal;
 	&:before, &:after {
 		@include _box-sizing();
 	}
@@ -91,13 +92,18 @@ h2 {
 .editing {
 	background-color: $editing-bg;
 	@include _box-shadow(0, 0, 0, 1px, $hover-border-color);
-	width: 50%;
+	max-width: $editable-field-width;
 	outline: none;
 	position: relative;
 	z-index: 2;
+	.text-area {
+		outline: none;
+		display: inline-block;
+		width: 100%;
+	}
 	.edit-area {
-		display: inline;
-	} 
+		display: inline-block;
+	}
 }
 
 .edit-area {

@@ -10,7 +10,15 @@ $(document).ready(function () {
 	setBg($('.user-responsibilities-item.sample-code'));
 
 	$('#user-name, #user-location').bind('focus focusout', function() {
-		$(this).toggleClass('editing');
+		$(this).parent().toggleClass('editing');
+	});
+
+	$('#user-name, #user-location').bind('keyup keydown', function(e) {
+		if ($(this).html() === '' || e.which === 16) {
+			$(this).append('<b>&nbsp;</b>');
+		} else if ($(this).html().length >= 1) {
+			$('b').remove();
+		}
 	});
 
 });
