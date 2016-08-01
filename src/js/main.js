@@ -9,16 +9,32 @@ $(document).ready(function () {
 	
 	setBg($('.user-responsibilities-item.sample-code'));
 
-	$('#user-name, #user-location').bind('focus focusout', function() {
-		$(this).parent().toggleClass('editing');
+	$('#user-name, #user-location').bind('focus', function() {
+		var textContent = $(this).html(),
+			$input = $(this);
+		$input.parent().addClass('editing');
+
+		$input.bind('keyup keydown', function() {
+			if ($input.html() === ''){
+				$input.append(textContent);
+			}
+		});
+
+		$input.parent().find('.edit-accept').click(function (e) {
+			e.preventDefault();
+			var newContent = $input.html() || textContent;
+			$input.html(newContent);
+			$input.parent().removeClass('editing');
+		});
+
+		$input.parent().find('.edit-decline').click(function (e) {
+			e.preventDefault();
+			var oldContent = textContent;
+			$input.html(oldContent);
+			$input.parent().removeClass('editing');
+		});
+
 	});
 
-	$('#user-name, #user-location').bind('keyup keydown', function(e) {
-		if ($(this).html() === '' || e.which === 16) {
-			$(this).append('<b>&nbsp;</b>');
-		} else if ($(this).html().length >= 1) {
-			$('b').remove();
-		}
-	});
 
 });

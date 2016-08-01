@@ -112,7 +112,7 @@ h2 {
 	right: 6px;
 	display: none;
 	.edit {
-		&-accept, &-erase {
+		&-accept, &-decline {
 			@include _flexible(inline-flex);
 			@include _border-radius(50%);
 			background-color: $editing-links-bg-default;
@@ -128,7 +128,7 @@ h2 {
 			background-size: 120%;
 		}
 
-		&-erase {
+		&-decline {
 			background-image: url("../images/mark-decline.svg");
 			background-size: 50%;
 		}
@@ -186,6 +186,11 @@ h2 {
 		font-weight: normal;
 		margin-bottom: 9px;
 		max-width: $editable-field-width;
+		.text-area {
+			outline: none;
+			display: inline-block;
+			width: 100%;
+		}
 		&:hover {
 			@include _box-shadow(0, 0, 0, 1px, $hover-border-color);
 		}
@@ -199,6 +204,11 @@ h2 {
 	}
 
 	&-additional-location {
+		.text-area {
+			outline: none;
+			display: inline-block;
+			width: 100%;
+		}
 		&:hover {
 			@include _box-shadow(0, 0, 0, 1px, $hover-border-color);
 		}
