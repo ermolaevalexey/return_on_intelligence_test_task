@@ -83,6 +83,34 @@ h2 {
 				}
 			}
 		}
+
+		&-add-skills {
+			position: relative;
+			.edit-area {
+				vertical-align: middle;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+				height: 1.5em;
+				.skill-level {
+					display: inline-block;
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+
+	.editing {
+		.edit-area {
+			top: -2px;
+			display: inline-block;
+			.edit {
+				&-accept, &-decline {
+					display: inline-block;
+					vertical-align: middle;
+				}
+			}
+		}
 	}
 }
 

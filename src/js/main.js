@@ -8,6 +8,15 @@ $(document).ready(function () {
 		element.css('background-image', 'url('+ bgi +')');
 	};
 
+	function deleteItem(element, trigger) {
+		//Removing li element from list
+		element.find(trigger).on('click', function (e) {
+			e.preventDefault();
+			$(this).parent().remove();
+		});
+	};
+
+	deleteItem($('.user-skill-list .user-skill-item'), '.delete-skill');
 	setBg($('.user-responsibilities-item.sample-code'));
 
 	//Editable fields functionality
@@ -58,7 +67,7 @@ $(document).ready(function () {
 		});
 
 		//Trying to append skill
-		$input.parent().find('.edit-accept').click(function (e) {
+		$input.parent().find('.edit-accept').on('click', function (e) {
 			e.preventDefault();
 			//We typed nothing and focus is broken or we've got default placeholder value
 			if ($input.html() === '' && !$input.is(':focus') || $input.html() === textContent){
@@ -66,22 +75,14 @@ $(document).ready(function () {
 				return;
 			} else {
 				//Appending new li element to list
-				var li = '<li class="user-skill-item ' + $skillLevel + '">'+ $input.html() 
-						 	+ '<a href="#" class="delete-skill"></a>' + 
-						 '</li>';
-				$('.user-skill-list').append(li);
+				var li = '<li class="user-skill-item ' + $skillLevel + '">'+ $input.html() + '<a href="#" class="delete-skill"></a>' + '</li>';
+				$(li).appendTo($('.user-skill-list'));
+				deleteItem($('.user-skill-list .user-skill-item'), '.delete-skill');
 				$input.html(textContent);
 				$input.parent().removeClass('editing');
 			}
 		});
 
 	});
-
-	//Removing li element from list
-	$('.user-skill-item').find('.delete-skill').click(function (e) {
-		e.preventDefault();
-		$(this).parent().remove();
-	});
-
 
 });
