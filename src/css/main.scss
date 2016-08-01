@@ -1,7 +1,7 @@
 @import 'vars';
 @import 'mixins';
 
-// Basics
+/* Basics */
 
 * {
 	box-sizing: border-box;
@@ -26,7 +26,7 @@ h2 {
 
 /* /Basics */
 
-// IE 9 support
+/* IE 9 support */
 
 .no-flexbox {
 	.user {
@@ -82,9 +82,9 @@ h2 {
 	}
 }
 
-// /IE 9 support
+/* /IE 9 support */
 
-// Main styles
+/* Main styles */
 
 .user {
 	&-summary {
@@ -285,4 +285,4 @@ h2 {
 	}
 }
 
-// /Main styles
+/* /Main styles */
