@@ -89,6 +89,8 @@ h2 {
 /* /IE 9 support */
 
 /* Main styles */
+
+/* Basic styles of editable fields */
 .editing {
 	background-color: $editing-bg;
 	@include _box-shadow(0, 0, 0, 1px, $hover-border-color);
@@ -136,6 +138,8 @@ h2 {
 		}
 	}
 }
+
+/* /Basic styles of editable fields */
 
 .user {
 
