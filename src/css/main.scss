@@ -92,6 +92,7 @@ h2 {
 .editing {
 	background-color: $editing-bg;
 	@include _box-shadow(0, 0, 0, 1px, $hover-border-color);
+	cursor: default;
 	max-width: $editable-field-width;
 	outline: none;
 	position: relative;
@@ -100,6 +101,7 @@ h2 {
 		outline: none;
 		display: inline-block;
 		width: 100%;
+		cursor: text;
 	}
 	.edit-area {
 		display: inline-block;
@@ -170,7 +172,7 @@ h2 {
 
 	&-page-to-print {
 		@include _border-radius(25px);
-		background-color: $skill-item-background;
+		background-color: $skill-item-strong-background;
 		color: $skill-item-text;
 		display: inline-block;
 		font-size: $base-font-size;
@@ -193,6 +195,7 @@ h2 {
 		}
 		&:hover {
 			@include _box-shadow(0, 0, 0, 1px, $hover-border-color);
+			cursor: pointer;
 		}
 	}
 
@@ -211,6 +214,7 @@ h2 {
 		}
 		&:hover {
 			@include _box-shadow(0, 0, 0, 1px, $hover-border-color);
+			cursor: pointer;
 		}
 	}
 
@@ -229,12 +233,20 @@ h2 {
 		&-item {
 		   @include _flexible(inline-flex);
 		   @include _border-radius(3px);
-		   background-color: $skill-item-background;
 		   color: $skill-item-text;
 		   font-size: $base-font-size;
 		   margin-right: 0.5em;
 		   padding: 6px 10px 5px;
 		   text-transform: uppercase;
+		   &.strong {
+		   		background-color: $skill-item-strong-background;
+		   }
+		   &.medium  {
+		   		background-color: $skill-item-medium-background;
+		   }
+		   &.weak {
+		   		background-color: $skill-item-weak-background;
+		   }
 		}
 
 	}
@@ -243,6 +255,38 @@ h2 {
 		color: $user-additional-color;
 		font-size: $base-font-size;
 		text-decoration: none;
+		max-width: $editable-select-width;
+		.text-area {
+			outline: none;
+			display: inline-block;
+			width: 100%;
+		}
+		&:hover {
+			cursor: pointer;
+		}
+		&.editing {
+			@include _box-shadow(0,0,0,1px, $skill-field-focus);
+			padding: 6px 5px;
+			font-size: .7em;
+			.edit-area {
+				top: 0;
+				bottom: 0;
+				margin: auto;
+				@include _flexible(flex);
+				@include _align-items(center);
+				.skill-level {
+					@include _flexible(inline-flex);
+					@include _transform-scale(0.9);
+					top: 0;
+				}
+				.edit {
+					&-accept, &-decline{
+						width: 1.2em;
+						height: 1.2em;
+					}
+				}
+			}
+		}
 	}
 
 	&-responsibilities {

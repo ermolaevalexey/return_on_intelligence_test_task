@@ -34,12 +34,24 @@
 					</p>
 					<p class="user-additional-languages">English</p>
 					<ul class="user-skill-list">
-						<li class="user-skill-item">PHP</li>
-						<li class="user-skill-item">Ruby</li>
-						<li class="user-skill-item">Javascript</li>
-						<li class="user-skill-item">Actionscript</li>
+						<li class="user-skill-item strong">PHP</li>
+						<li class="user-skill-item strong">Ruby</li>
+						<li class="user-skill-item medium">Javascript</li>
+						<li class="user-skill-item weak">Actionscript</li>
 					</ul>
-					<a href="#" class="user-add-skills">Add skills</a>
+					<div class="user-add-skills">
+						<span id="user-add-skills" class="text-area" contenteditable="true">
+							Add skills
+						</span>
+						<span class="edit-area" contenteditable="false">
+							<select name="skill-level" id="skill-level" class="skill-level">
+								<option value="strong" selected>Strong</option>
+								<option value="medium">Medium</option>
+								<option value="weak">Weak</option>
+							</select>
+							<a href="#" class="edit-accept"></a>
+						</span>
+					</div>
 				</div>
 			</div>
 			<div class="user-responsibilities">

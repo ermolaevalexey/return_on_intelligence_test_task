@@ -5,8 +5,11 @@ $base-font-size: 0.9em;
 
 //Colors
 $big-quotes-color: #ededed;
-$skill-item-background: #000;
+$skill-item-strong-background: #000;
+$skill-item-medium-background: #5c5c5c;
+$skill-item-weak-background: #a2a2a2;
 $skill-item-text: #fff;
+$skill-field-focus: #00ff00;
 $editing-bg: $skill-item-text;
 $user-main-info-color: #e6e6e6;
 $user-additional-color: #4c4c4c;
@@ -17,5 +20,6 @@ $editing-links-border-default: #e6e6e6;
 //Calculations
 $layout-width: 960px;
 $editable-field-width: 460px;
+$editable-select-width: 258px;
 $items: 4;
 $item-measure: ($layout-width - 1)/$items;
