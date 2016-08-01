@@ -10,9 +10,11 @@
 }
 
 @mixin _flexible($display: flex) {
-	display: -webkit-#{$display}';
-	display: -ms-#{$display}box'; // IE10 uses -ms-flexbox
+	display: -webkit-#{$display};
+	display: -moz-#{$display};
+	display: -ms-#{$display}box; // IE10 uses -ms-flexbox
 	display: -ms-#{$display}; //IE11
+	display: $display;
 }
 
 @mixin _justify-content($justify: flex-start) {

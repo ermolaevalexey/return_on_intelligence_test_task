@@ -89,11 +89,44 @@ h2 {
 
 /* Main styles */
 .editing {
-	background: $editing-bg;
+	background-color: $editing-bg;
 	@include _box-shadow(0, 0, 0, 1px, $hover-border-color);
-	max-width: 50%;
-	overflow: hidden;
+	width: 50%;
 	outline: none;
+	position: relative;
+	z-index: 2;
+	.edit-area {
+		display: inline;
+	} 
+}
+
+.edit-area {
+	position: absolute;
+	top: 0;
+	right: 6px;
+	display: none;
+	.edit {
+		&-accept, &-erase {
+			@include _flexible(inline-flex);
+			@include _border-radius(50%);
+			background-color: $editing-links-bg-default;
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+			border: 1px solid $editing-links-border-default;
+			width: .8em;
+			height: .8em;
+		}
+
+		&-accept {
+			background-image: url("../images/mark-accept.svg");
+			background-size: 120%;
+		}
+
+		&-erase {
+			background-image: url("../images/mark-decline.svg");
+			background-size: 50%;
+		}
+	}
 }
 
 .user {
@@ -135,7 +168,7 @@ h2 {
 		color: $skill-item-text;
 		display: inline-block;
 		font-size: $base-font-size;
-		padding: 6px 20px 5px;
+		padding: 6px 17px 6px;
 		position: absolute;
 		right: 30px;
 		top: 21px;
@@ -146,7 +179,7 @@ h2 {
 	&-main-info-name {
 		font-weight: normal;
 		margin-bottom: 9px;
-		max-width: 50%;
+		max-width: $editable-field-width;
 		&:hover {
 			@include _box-shadow(0, 0, 0, 1px, $hover-border-color);
 		}
@@ -156,7 +189,7 @@ h2 {
 		color: $user-additional-color;
 		font-weight: bold;
 		margin-bottom: 9px;
-		max-width: 50%;
+		max-width: $editable-field-width;
 	}
 
 	&-additional-location {

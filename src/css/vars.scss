@@ -11,8 +11,11 @@ $editing-bg: $skill-item-text;
 $user-main-info-color: #e6e6e6;
 $user-additional-color: #4c4c4c;
 $hover-border-color: #bababa;
+$editing-links-bg-default: #e7e7e7;
+$editing-links-border-default: #e6e6e6;
 
 //Calculations
 $layout-width: 960px;
+$editable-field-width: 460px;
 $items: 4;
 $item-measure: ($layout-width - 1)/$items;
