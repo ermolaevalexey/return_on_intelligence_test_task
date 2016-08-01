@@ -1,6 +1,8 @@
 @import 'vars';
 @import 'mixins';
 
+// Basics
+
 * {
 	box-sizing: border-box;
 	font-family: $font-family;
@@ -22,6 +24,9 @@ h2 {
 	font-size: 1.875em;
 }
 
+/* /Basics */
+
+// IE 9 support
 
 .no-flexbox {
 	.user {
@@ -77,6 +82,10 @@ h2 {
 	}
 }
 
+// /IE 9 support
+
+// Main styles
+
 .user {
 	&-summary {
 		@include _flexible(flex);
@@ -106,6 +115,21 @@ h2 {
 		@include _flex-shrink(3);
 		background-color: $user-main-info-color;
 		padding: 27px 31px 15px 36px;
+		position: relative;
+	}
+
+	&-page-to-print {
+		@include _border-radius(25px);
+		background-color: $skill-item-background;
+		color: $skill-item-text;
+		display: inline-block;
+		font-size: $base-font-size;
+		padding: 6px 20px 5px;
+		position: absolute;
+		right: 30px;
+		top: 21px;
+		text-transform: uppercase;
+		text-decoration: none;
 	}
 
 	&-main-info-name {
@@ -134,9 +158,9 @@ h2 {
 		&-item {
 		   @include _flexible(inline-flex);
 		   @include _border-radius(3px);
-		   background-color: #000;
-		   color: #fff;
-		   font-size: 0.9em;
+		   background-color: $skill-item-background;
+		   color: $skill-item-text;
+		   font-size: $base-font-size;
 		   margin-right: 0.5em;
 		   padding: 6px 10px 5px;
 		   text-transform: uppercase;
@@ -146,7 +170,7 @@ h2 {
 
 	&-add-skills {
 		color: $user-additional-color;
-		font-size: 0.9em;
+		font-size: $base-font-size;
 		text-decoration: none;
 	}
 
@@ -171,7 +195,7 @@ h2 {
 		border-bottom: 1px solid $user-main-info-color;
 
 		.header {
-			background-color: #fff;
+			background-color: $skill-item-text;
 			text-align: center;
 			padding: 22px 12px 15px 12px;
 			min-height: 70px;
@@ -179,7 +203,7 @@ h2 {
 
 		.caption {
 			text-align: center;
-			font-size: 0.9em;
+			font-size: $base-font-size;
 		}
 
 		.availability {
@@ -234,7 +258,7 @@ h2 {
 					right: 10px;
 				}
 				font-family: $font-family-quotes;
-				font-size: 0.9em;
+				font-size: $base-font-size;
 				font-style: italic;
 				min-height: 120px;
 				padding: 0 20px;
@@ -252,7 +276,7 @@ h2 {
 	}
 	&-list-item {
 		display: list-item;
-		font-size: 0.9em;
+		font-size: $base-font-size;
 		list-style-type: disc;
 		margin-bottom: 5px;
 		&-title {
@@ -260,3 +284,5 @@ h2 {
 		}
 	}
 }
+
+// /Main styles

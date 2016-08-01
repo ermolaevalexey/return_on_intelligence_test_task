@@ -1,6 +1,16 @@
 @import 'vars';
 @import 'mixins';
 
+// Media queries
+
+@media screen and (max-width: 1025px) {
+	.user {
+		&-page-to-print {
+			display: none;
+		}
+	}
+}
+
 @media screen and (min-width: 740px) and (max-width: 978px) {
 	.user {
 		&-responsibilities-item {
@@ -68,3 +78,5 @@
 		}
 	}
 }
+
+// /Media queries
