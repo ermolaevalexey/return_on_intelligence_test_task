@@ -237,31 +237,43 @@ h2 {
 		}
 
 		&.quotation {
+			position: relative;
+			&:before, &:after {
+				color: $big-quotes-color;
+				font-size: 10em;
+				font-style: normal;
+				font-family: $font-family;
+				line-height: 0;
+				position: absolute;
+			}
+
+			&:before {
+				content: '\201C';
+				left: 6px;
+				top: 107px;
+			}
+			&:after {
+				content: '\201D';
+				bottom: -15px;
+				right: 10px;
+			}
 			.quote {
-				&:before, &:after {
-					color: $big-quotes-color;
-					font-size: 10em;
-					font-style: normal;
-					font-family: $font-family;
-					line-height: 0;
+				position: relative;
+				.author {
+					display: block;
 					position: absolute;
-					z-index: -1;
-				}
-				&:before {
-					content: '\201C';
-					left: 6px;
-					top: 35px;
-				}
-				&:after {
-					content: '\201D';
-					bottom: -50%;
-					right: 10px;
+					bottom: 0;
+					margin-top: 20px;
+					clear: both;
+					right: 24px;
+					font-style: normal;
+					font-weight: bold;
+					font-size: $base-font-size;
 				}
 				font-family: $font-family-quotes;
 				font-size: $base-font-size;
 				font-style: italic;
-				min-height: 120px;
-				padding: 0 20px;
+				padding: 0 20px 20px;
 				position: relative;
 				z-index: 1;
 			}
